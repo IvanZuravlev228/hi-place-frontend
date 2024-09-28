@@ -1,0 +1,20 @@
+<div class="discount" (click)="goToUserPage(discount.userId)">
+  <div class="delete-container" (click)="deleteDiscount()" *ngIf="showDeleteContainer">
+    <img class="delete-icon" src="assets/image/icons/trash.svg">
+  </div>
+  <div class="discount-item">
+    <div class="d-title">
+      <h2><a href="/user/profile?userId={{discount.userId}}">{{discount.title}}</a></h2><p class="d-discount">-{{discount.discount}}%</p>
+    </div>
+    <div class="d-description-container">
+      <p class="d-description-text">{{discount.description}}</p>
+    </div>
+    <div class="d-end-container">
+      <p>{{getFormatedDate(discount.endDate) ? "Акція діє до " + getFormatedDate(discount.endDate)
+        : "Акція без кінцевого терміну"}}</p>
+    </div>
+  </div>
+  <div class="photo-container">
+    <img class="d-photo" [src]="discount.photoUrl">
+  </div>
+</div>

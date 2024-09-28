@@ -1,0 +1,66 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<section class="user-block-container">
+  <img [src]="user.logoURL" alt="Ваше фото скоро з'явиться" class="user-logo-img" [title]="user.name">
+
+  <p id="user-name">{{ user.name }}</p>
+
+  <div id="user-avg">
+    <ng-container *ngFor="let star of getStars(user.avg)">
+      <i class="fa-star" [ngClass]="star" style="color: gold;"></i>
+    </ng-container>
+  </div>
+
+  <div class="experience">
+    <p>{{ user.experience }} р. досвіду</p>
+  </div>
+
+  <button class="default-main-btn" id="user-phone" (click)="revealPhone(user)">
+    <a id="user-phone-phone" href="tel:{{ user.phone }}">{{ user.hiddenPhone }}</a>
+    <p id="user-phone-call">Подзвонити</p>
+  </button>
+
+  <div class="checkbox-container" *ngIf="user.homeVisit || user.onlineCounseling || user.atSalon">
+    <p class="hint-text">Додатково</p>
+    <p *ngIf="user.homeVisit">Виїзд додому<span>&#10003;</span></p>
+    <p *ngIf="user.onlineCounseling">Онлайн консультація<span>&#10003;</span></p>
+    <p *ngIf="user.atSalon">Приймаю в салоні<span>&#10003;</span></p>
+  </div>
+
+  <div class="social-feedback-container" *ngIf="user.instagramLink || user.tiktokLink || user.telegramLink || user.viberLink">
+    <div>
+      <p class="hint-text">Наші соцмережі</p>
+    </div>
+    <div class="social">
+      <a [href]="user.instagramLink" target="_blank">
+        <img class="social-icon" src="assets/image/icons/instagram.png" *ngIf="user.instagramLink">
+      </a>
+
+      <a [href]="user.tiktokLink" target="_blank">
+        <img class="social-icon" src="assets/image/icons/tiktok.png" *ngIf="user.tiktokLink">
+      </a>
+
+      <a [href]="user.telegramLink" target="_blank">
+        <img class="social-icon" src="assets/image/icons/telegram.png" *ngIf="user.telegramLink">
+      </a>
+
+      <a [href]="user.viberLink" target="_blank">
+        <img class="social-icon" src="assets/image/icons/viber.png" *ngIf="user.viberLink">
+      </a>
+    </div>
+  </div>
+  <div class="feedback">
+    <a href="#">Відгуки</a>
+  </div>
+
+  <div class="address-container" *ngIf="addresses.length > 0">
+    <p class="hint-text">Ми знаходимося</p>
+    <div class="address-item" *ngFor="let address of addresses">
+      <a href="https://www.google.com/maps/search/?api=1&query={{ address.city }},%20{{ address.road }}%20{{ address.houseNumber }}
+" target="_blank" rel="noopener noreferrer">{{ address.city }}, {{ address.road }} {{ address.houseNumber }}</a>
+
+    </div>
+  </div>
+</section>

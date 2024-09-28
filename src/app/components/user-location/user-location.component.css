@@ -1,0 +1,10 @@
+.location-container {
+  /*padding: 15px;*/
+}
+
+#city-select {
+  padding: 10px 20px;
+  color: #5a5a5a;
+  font-size: 18px;
+  background-color: #eaeaea;
+}

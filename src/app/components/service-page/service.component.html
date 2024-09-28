@@ -1,0 +1,64 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<app-header></app-header>
+<main class="main-service-container">
+  <section class="side-panel default-main-block">
+    <div class="service-type-item" *ngFor="let typeOfService of typesOfService">
+      <p>
+        <button class="service-type-item-btn"
+                [ngClass]="{'selected': selectedTypeOfServiceId === typeOfService.id}"
+                (click)="loadServiceItem(typeOfService)">
+          {{ typeOfService.name }}
+        </button>
+      </p>
+      <div class="service-item-block" *ngIf="!typeOfService.serviceItem || typeOfService.serviceItem.length > 1">
+        <div class="service-item-item"
+             *ngFor="let item of typeOfService.serviceItem"
+             [ngClass]="{'selected': selectedItemId === item.id}"
+             (click)="getUsersByServiceItemId(item.id, typeOfService.id)">
+          <p><button class="service-item-item-btn">{{ item.name }}</button></p>
+        </div>
+      </div>
+    </div>
+
+    <app-sorting (sortChanged)="handleSortChanged($event)"></app-sorting>
+  </section>
+
+  <section class="users-container">
+    <div class="user default-main-block" *ngFor="let user of users">
+      <app-user-preview [inputUser]="user"></app-user-preview>
+
+      <div class="right">
+        <div class="discount-mode-container" *ngIf="user.discountWithPromo">
+          <div class="discount">
+            <p>
+              -{{ user.discountWithPromo }}% за промокодом HiPlace
+            </p>
+          </div>
+          <div class="mode">
+            <p>{{ user.type }}</p>
+          </div>
+        </div>
+
+        <div class="app-image-container" *ngIf="user.examples && user.examples.length > 0">
+          <app-image-example [examples]="user.examples"></app-image-example>
+        </div>
+
+        <div class="show-user-container">
+          <button class="show-user-btn default-main-btn" (click)="goToUserPricePage(user.id)">Переглянути прайс</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="pagination-btns-container">
+      <div class="pagination-btns">
+        <button class="pagination-btn default-main-btn" (click)="previousPage()"><</button>
+        <button class="pagination-btn default-main-btn" (click)="nextPage()">></button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<app-footer></app-footer>

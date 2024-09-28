@@ -1,0 +1,103 @@
+<section>
+  <div class="create-save-container" *ngIf="showChangeMode">
+    <button class="create-discount-btn default-main-btn"
+            (click)="enableAddDiscountContainer()"
+            *ngIf="!showAddDiscountContainer">Додати акцію</button>
+    <button class="save-discount-btn"
+            (click)="submit()"
+            *ngIf="showAddDiscountContainer">Зберегти!</button>
+  </div>
+  <div class="create-discount-container" *ngIf="showAddDiscountContainer">
+    <form>
+      <div class="discount">
+        <div class="discount-item">
+          <div class="d-title">
+            <h2>
+              <input id="input-discount-title"
+                     type="text"
+                     [(ngModel)]="discountRequest.title"
+                     name="title"
+                     required
+                     placeholder="Заголовок">
+            </h2>
+
+            <div class="input-discount-container">-
+              <input id="input-discount-discount"
+                     type="text"
+                     [(ngModel)]="discountRequest.discount"
+                     (ngModelChange)="checkingInputNumber($event)"
+                     name="discount"
+                     required
+                     placeholder="5">%
+            </div>
+
+          </div>
+          <div class="d-description-container">
+            <textarea id="input-discount-desc"
+                      type="text"
+                      maxlength="400"
+                      [(ngModel)]="discountRequest.description"
+                      name="description"
+                      required
+                      class="form-input"
+                      placeholder="Додайте опис, щоб люди зрозуміли, що ви пропонуєте. Не більше 400 символів"></textarea>
+            <p class="d-description-count">{{ discountRequest.description.length }} / 400 символов</p>
+          </div>
+
+          <div class="d-date-container">
+            <label>
+              <input type="checkbox" (change)="withoutEndDateBtnClick()" />
+              Без кінцевої дати
+            </label>
+
+            <div class="date-picker-container" *ngIf="hideDatePicker">
+              <mat-form-field>
+                <mat-label>Період дії акції</mat-label>
+                <mat-date-range-input [rangePicker]="picker">
+                  <input matStartDate (dateChange)="onStartDateChange($event)" placeholder="Start date">
+                  <input matEndDate (dateChange)="onEndDateChange($event)" placeholder="End date">
+                </mat-date-range-input>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-date-range-picker #picker></mat-date-range-picker>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="select-types-container">
+            <p>До якої послуги акція?</p>
+            <mat-form-field>
+              <mat-label>Оберіть послугу</mat-label>
+              <mat-select (selectionChange)="onServiceChange($event.value)">
+                <mat-option *ngFor="let type of typesOfService" [value]="type.id">{{type.name}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="photo-discount-container">
+          <div class="photo" (click)="triggerFileInput()">
+            <img *ngIf="avatarSrc" [src]="avatarSrc" alt="Your Avatar" class="avatar-preview">
+            <p *ngIf="!avatarSrc">Натисніть, щоб додати картинку</p>
+            <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" hidden>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="discounts-item" *ngFor="let discount of discounts">
+    <app-discount-item [discount]="discount" [showDeleteContainer]="showChangeMode"></app-discount-item>
+  </div>
+
+  <div class="pagination-btns-container">
+    <div class="pagination-btns">
+      <button class="pagination-btn default-main-btn"
+              (click)="previousPage()"
+              ><
+      </button>
+      <button class="pagination-btn default-main-btn"
+              (click)="nextPage()"
+              >>
+      </button>
+    </div>
+  </div>
+</section>

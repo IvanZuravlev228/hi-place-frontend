@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background-color: #fff;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.default-main-block {
+  background-color: #F6F6F6;
+  border-radius: 3px;
+}
+
+.default-main-btn {
+  font-weight: bold;
+  background-color: rgba(255, 215, 203, 1);
+  transition: background-color 0.3s;
+  border-radius: 3px;
+}
+
+.default-main-btn:hover {
+  cursor: pointer;
+  background-color: rgba(255, 215, 203, 0.5);
+}
+
+html, body { height: 100%; }
+/*body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }*/

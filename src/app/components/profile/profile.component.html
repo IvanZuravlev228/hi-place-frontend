@@ -1,0 +1,98 @@
+<app-header></app-header>
+
+<app-loading [isLoading]="isLoading"></app-loading>
+
+<main class="profile-main-container">
+  <section class="user-container default-main-block">
+    <app-user-preview [userId]="userId"></app-user-preview>
+  </section>
+
+  <section class="service-block-container default-main-block">
+    <div class="app-image-container" *ngIf="images && images.length > 0">
+      <app-image-example [examples]="images"></app-image-example>
+    </div>
+
+    <div class="type-service-counts-container">
+      <div class="change-mode-btn">
+        <button class="mode-change"
+                (click)="activateButton(0); showPriceOnClick()"
+                [ngClass]="{'active': activeButtonIndex === 0}">
+          <p class="mode-text">Прайс</p>
+        </button>
+
+        <button class="mode-change"
+                (click)="activateButton(1); showDiscountOnClick()"
+                [ngClass]="{'active': activeButtonIndex === 1}">
+          <p class="mode-text">Акції</p>
+        </button>
+
+        <button class="mode-change"
+                (click)="activateButton(2); showAddServiceOnClick()"
+                [ngClass]="{'active': activeButtonIndex === 2}"
+                *ngIf="showModifyContainers">
+          <p class="mode-text">Редагувати прайс</p>
+        </button>
+
+        <button class="mode-change"
+                (click)="activateButton(3); showAddAddressOnClick()"
+                [ngClass]="{'active': activeButtonIndex === 3}"
+                *ngIf="showModifyContainers">
+          <p class="mode-text">Адресса</p>
+        </button>
+      </div>
+
+      <div class="address-container" *ngIf="showAddAddress">
+        <app-address (selectedAddressEmit)="onAddressSelected($event)"></app-address>
+        <button class="add-address-btn default-main-btn" (click)="saveAddress()">Додати адресу</button>
+      </div>
+
+      <app-add-service [images]="images" *ngIf="showAddService"></app-add-service>
+
+      <app-add-discount [userId]="userId" *ngIf="showAddDiscount" [showChangeMode]="showModifyContainers"></app-add-discount>
+
+      <div class="show-service-container" *ngIf="showService">
+        <div class="type-counts-item" *ngFor="let typeCounts of profilePriceData">
+          <button class="type-counts-btn"
+                  (click)="getPriceByTypeOfService(typeCounts.typeOfServiceId, typeCounts)">
+            <span class="arrow-icon" [class.up]="typeCounts.isOpen"></span>
+            {{ typeCounts.typeOfServiceName }} ({{ typeCounts.count }})
+
+          </button>
+          <div class="price-profile-container">
+            <div class="price-profile-item" *ngFor="let price of typeCounts.priceProfile">
+
+              <div class="price-profile-service-name">
+                {{ price.serviceItemName }}
+              </div>
+              <div class="price-profile-price">
+                <p>{{ price.price }}грн/{{ price.timeUnit }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section class="address-container" *ngIf="addresses.length > 0">
+  <h1>Наші адреси</h1>
+  <div class="address-name">
+    <div class="address-name-item" *ngFor="let address of addresses">
+      <button (click)="showMap(address.lat, address.lon)" id="show-map-btn">
+        <img class="map-pointer-icon" src="assets/image/icons/map-pointer.png" alt="icon">
+        {{ address.city }}, {{ address.road }} {{ address.houseNumber }}
+        <img class="map-pointer-icon" src="assets/image/icons/trash.svg"
+             alt="delete"
+             title="delete address"
+             (click)="deleteAddress(address.id)"
+             *ngIf="showModifyContainers">
+      </button>
+    </div>
+  </div>
+  <div class="address-map">
+    <app-map [lat]="addressLat" [lon]="addressLon"></app-map>
+  </div>
+</section>
+
+<app-footer></app-footer>

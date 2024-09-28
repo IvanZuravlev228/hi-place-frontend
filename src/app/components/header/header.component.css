@@ -1,0 +1,84 @@
+.header-wrapper {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 25px;
+  height: 60px;
+  width: 1500px;
+  font-family: 'Montserrat';
+  font-weight: 600;
+}
+
+
+.auth-container {
+  display: flex;
+  gap: 1px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-button {
+  color: black;
+  padding: 15px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.7s ease;
+  border: none;
+  font-size: 20px;
+}
+
+.nav-button:hover {
+  background-color: rgba(255, 192, 203, 0.3);
+}
+
+.nav-button:active {
+  color: #c119c7;
+}
+
+.header-link {
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.header-link:visited {
+  color: inherit;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+}
+
+.logo-img {
+  max-height: 60px;
+  border-radius: 5px;
+}
+
+.logo-img:hover {
+  cursor: pointer;
+}
+
+.profile-icon-btn {
+  background-color: transparent;
+}
+
+.profile-icon {
+  width: 40px;
+  transition: width 0.3s ease;
+  cursor: pointer;
+}
+
+.profile-icon:hover {
+  width: 45px;
+}

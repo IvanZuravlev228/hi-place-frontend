@@ -1,0 +1,50 @@
+<app-loading [isLoading]="isLoading"></app-loading>
+
+<section class="add-service-wrapper">
+  <form (ngSubmit)="onSubmit()" class="add-price-form">
+    <div *ngFor="let model of createModel" class="create-model-container">
+
+      <div (click)="getTypeOfService(model)" class="types-service-btn">
+        <h3>{{ model.mainTypes.name }}</h3>
+      </div>
+      <div *ngFor="let type of model.typesOfService" class="types-service-container">
+        <div (click)="getEmptyPrice(type.id, type)" class="prices-btn">
+          <p>
+            {{ type.name }}
+          </p>
+          <p id="added-images">(добавлено картинок:{{ type.imageCount ? type.imageCount : 0 }}/5)</p>
+          <div class="add-image" *ngIf="type.imageCount < 5">
+            <input type="file" (change)="onFileSelected($event, type)">
+          </div>
+        </div>
+
+        <div *ngFor="let price of type.prices" class="prices-container">
+          <p id="priceName">{{ price.serviceItemName }}</p>
+
+          <div class="price-time-container">
+            <input type="text" id="price-input" [(ngModel)]="price.price" [ngModelOptions]="{standalone: true}"> /
+
+            <select id="timeUnit" [(ngModel)]="price.timeUnit" name="type" class="select-time-unit" required>
+              <option [ngValue]="null" disabled>{{ price.timeUnit }}</option>
+              <option [ngValue]="'15хв'">15хв</option>
+              <option [ngValue]="'30хв'">30хв</option>
+              <option [ngValue]="'45хв'">45хв</option>
+              <option [ngValue]="'год'">год</option>
+              <option [ngValue]="'2год'">2год</option>
+              <option [ngValue]="'сеанс'">сеанс</option>
+            </select>
+
+            <img id="delete-price"
+                 src="assets/image/icons/trash.svg"
+                 alt="delete price"
+                 (click)="deletePrice(type.prices, price.id)">
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="price-submit-btn">save</button>
+      <div class="save-button-container" *ngIf="formDataImages.has('files')">
+    </div>
+  </form>
+</section>

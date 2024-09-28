@@ -1,0 +1,54 @@
+<app-header></app-header>
+
+<main class="about-main-container">
+  <section class="preview-section">
+    <div class="preview-text">
+      <h1 class="header-logo-text">Hi Place</h1>
+      <div class="line"></div>
+      <p class="header-text">Гід у світі краси, де кожен може знайти ідеального майстра і салон, що відповідають усім вашим вимогам і вподобанням</p>
+      <p class="btn-first" (click)="goToMainPage()">Наші послуги</p>
+    </div>
+  </section>
+
+  <section class="service-container">
+    <div class="master-salon">
+      <div class="master-salon-item">
+        <div class="service-header">
+          <h2>Майстер</h2>
+        </div>
+        <div class="line-s"></div>
+        <div class="text">
+          <p>Станьте частиною спільноти професіоналів б'юті-індустрії! Створіть акаунт майстра, залучайте нових клієнтів і демонструйте свої навички та послуги</p>
+        </div>
+        <div class="service-btn-container">
+          <p class="btn-second" (click)="goToRegisterPage()">Я майстер</p>
+        </div>
+      </div>
+      <div class="vertical-line"></div>
+      <div class="master-salon-item">
+        <div class="service-header">
+          <h2>Салон краси</h2>
+        </div>
+        <div class="line-s"></div>
+        <div class="text">
+          <p>Зареєструйте свій салон краси та відкрийте нові можливості для розвитку! Залучайте більше клієнтів і розширюйте свою базу відвідувачів</p>
+        </div>
+        <div class="service-btn-container">
+          <p class="btn-second" (click)="goToRegisterPage()">Мы салон краси</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="discount-container">
+    <div class="discount-text-container">
+      <img class="about-icon" src="./assets/image/icons/discount.svg" alt="sale">
+      <p>Наші майстри та салони часто роблять знижки на свої послуги або проводять майстер класи. Зайди і дізнайся про це більше</p>
+      <p class="btn-first" (click)="goToDiscountPage()">Спец пропозиції</p>
+    </div>
+    <div>
+    </div>
+  </section>
+</main>
+
+<app-footer></app-footer>

@@ -1,0 +1,93 @@
+.create-save-container {
+  margin-bottom: 20px;
+}
+
+.create-discount-btn {
+  width: 200px;
+  padding: 10px 0;
+}
+
+.save-discount-btn {
+  width: 200px;
+  border-radius: 5px;
+  padding: 10px 0;
+  font-weight: bold;
+  background-color: rgba(86, 255, 86, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.save-discount-btn:hover {
+  background-color: rgba(86, 255, 86, 1);
+  cursor: pointer;
+}
+
+#input-discount-title {
+  font-size: 28px;
+  width: 70%;
+  padding: 5px 10px;
+}
+
+#input-discount-desc {
+  resize: none;
+  height: 150px;
+  line-height: 1.5;
+  font-size: 18px;
+  width: 90%;
+  padding: 10px 15px;
+}
+
+.d-description-count {
+  font-size: 14px;
+  color: grey;
+}
+
+.input-discount-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 70px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: rgba(255, 215, 203, 1);
+  border: 1px red solid;
+}
+
+#input-discount-discount {
+  width: 25px;
+  padding: 5px 0;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 20px;
+}
+
+.photo-discount-container {
+
+}
+
+.photo {
+  height: 250px;
+  border: 2px dashed #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.avatar-preview {
+  border-radius: 8px;
+  overflow: hidden;
+  height: 250px;
+  object-fit: cover;
+}
+
+input[type="file"] {
+  display: none;
+}

@@ -1,0 +1,31 @@
+<app-loading [isLoading]="startLoading"></app-loading>
+
+<section class="register-step-container">
+  <form (ngSubmit)="onSubmit()" class="form">
+    <div class="input-wrapper">
+      <input type="text" id="name" [(ngModel)]="firstRegisterDto.name" name="name" required class="form-input" placeholder=" ">
+      <label for="name" class="form-label">Ваше ім'я / назва салону</label>
+    </div>
+
+    <div class="input-wrapper">
+      <input type="email" id="email" [(ngModel)]="firstRegisterDto.email" name="email" required class="form-input" placeholder=" ">
+      <label for="email" class="form-label">Електронна пошта</label>
+    </div>
+
+    <div class="input-wrapper">
+      <input type="password" id="pass" [(ngModel)]="firstRegisterDto.password" name="pass" required class="form-input" placeholder=" ">
+      <label for="pass" class="form-label">Пароль</label>
+    </div>
+
+    <div class="input-wrapper">
+      <input type="tel" id="phone" [(ngModel)]="firstRegisterDto.phone" name="phone" required class="form-input" placeholder=" ">
+      <label for="phone" class="form-label">+38(099) 999 99 99</label>
+    </div>
+
+    <button type="submit" class="submit-btn default-main-btn">Next</button>
+
+    <div class="error-container" *ngIf="showErrorContainer">
+      <p class="error-message">{{ errorMessage }}</p>
+    </div>
+  </form>
+</section>

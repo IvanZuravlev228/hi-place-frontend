@@ -1,0 +1,41 @@
+.sort-container {
+  border-radius: 8px;
+  padding: 13px;
+  background-color: #dedede;
+  max-width: 400px;
+  margin: 40px auto;
+}
+
+.sort-container h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.sort-container div {
+  margin-bottom: 12px;
+}
+
+.sort-container label {
+  margin-left: 8px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.sort-container input[type="radio"],
+.sort-container input[type="checkbox"] {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.sort-btn {
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+.sort-btn:hover {
+}

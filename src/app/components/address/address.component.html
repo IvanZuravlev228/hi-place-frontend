@@ -1,0 +1,24 @@
+<div class="form-group">
+  <div *ngIf="selectedAddresses.length > 0" class="list-selected-group">
+    <p id="selected-address-header">Обрані адреси</p>
+    <div *ngFor="let address of selectedAddresses" class="list-selected-group-item">
+      <div class="address-text-container">
+        <p>{{ address.road }}, {{ address.houseNumber }}. {{ address.suburb? "Рядом: " + address.suburb : "" }}</p>
+      </div>
+
+      <div class="delete-container">
+        <button (click)="deleteSelectedAddress(address)" class="delete-selected-address-btn">
+          <img alt="delete" src="assets/image/icons/delete.png" class="delete-selected-address-img">
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <p id="address-hint">Приклад: Київ, Катерини Білокур 4</p>
+  <input type="text" class="form-control" id="address" [(ngModel)]="query" (ngModelChange)="onQueryChange()" placeholder="Ваша адреса:">
+  <ul *ngIf="addresses.length > 0" class="list-group">
+    <li *ngFor="let address of addresses" (click)="selectAddress(address)" class="list-group-item">
+      {{ address.display_name }}
+    </li>
+  </ul>
+</div>

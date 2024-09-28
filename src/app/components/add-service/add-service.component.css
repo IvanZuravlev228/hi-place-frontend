@@ -1,0 +1,127 @@
+.add-service-wrapper {
+  width: 100%;
+}
+
+.add-price-form {
+
+}
+
+.create-model-container {
+  background-color: rgba(255, 215, 203, 0.5);
+  margin-bottom: 10px;
+}
+
+.types-service-btn {
+  padding: 7px 10px;
+  font-size: 20px;
+  margin-bottom: 7px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.types-service-btn:hover {
+  cursor: pointer;
+  background-color: rgba(255, 215, 203, 1);
+}
+
+.types-service-container {
+  padding: 0 0 5px 25px;
+  margin-bottom: 10px;
+}
+
+.prices-btn {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 5px 5px;
+  font-size: 18px;
+  border-radius: 4px;
+}
+
+.prices-btn:hover {
+  background-color: rgba(255, 215, 203, 0.5);
+  cursor: pointer;
+}
+
+#added-images {
+  font-size: 14px;
+  color: grey;
+}
+
+.prices-container {
+  padding: 7px 20px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: #2f2f2f 1px solid;
+  align-items: center;
+}
+
+.price-time-container {
+  font-size: 20px;
+  width: 30%;
+  align-items: center;
+}
+
+#priceName {
+  margin-right: 15px;
+  display: block;
+}
+
+#price-input {
+  padding: 5px 20px;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 30px;
+}
+
+.select-time-unit {
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  appearance: none;
+}
+
+.select-time-unit:focus {
+  border-color: #66afe9;
+  outline: none;
+}
+
+.select-time-unit option {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.select-time-unit:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+.delete-container {
+}
+
+#delete-price {
+  margin-left: 20px;
+  width: 20px;
+}
+
+#delete-price:hover {
+  cursor: pointer;
+}
+
+.price-submit-btn {
+  background-color: #c1ffc1;
+  width: 100%;
+  padding: 7px 0;
+  font-size: 18px;
+  transition: background-color 0.3s ease, font-size 0.5s ease;
+  border-radius: 4px;
+}
+
+.price-submit-btn:hover {
+  cursor: pointer;
+  background-color: #adffad;
+  font-size: 22px;
+}

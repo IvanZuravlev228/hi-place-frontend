@@ -1,0 +1,46 @@
+<app-loading [isLoading]="startLoading"></app-loading>
+
+<section class="register-step-container">
+  <form (ngSubmit)="onSubmit()" class="form">
+    <div class="form-group">
+      <label for="type" id="type-label">Ви майстер чи салон?</label>
+      <select id="type" [(ngModel)]="secondRegisterDto.type" name="type" required>
+        <option value="" disabled selected>Виберіть...</option>
+        <option value="SALON">Салон краси</option>
+        <option value="MASTER">Майстер</option>
+      </select>
+    </div>
+
+    <div class="input-wrapper">
+      <input type="number" id="experience" [(ngModel)]="secondRegisterDto.experience" name="experience" step="0.1" class="form-input" placeholder=" ">
+      <label for="experience" class="form-label">Скільки у вас років досвіду?</label>
+    </div>
+
+
+    <div class="input-wrapper">
+      <input type="number" id="discountWithPromo" [(ngModel)]="secondRegisterDto.discountWithPromo" name="discountWithPromo" value="0" class="form-input" placeholder=" ">
+      <label for="discountWithPromo" class="form-label">Знижка за промокодом HiPlace</label>
+    </div>
+
+    <div class="form-group">
+      <div class="checkbox-container">
+        <label for="homeVisit" class="checkbox-label">Чи працюєте на виїзд?</label>
+        <input type="checkbox" id="homeVisit" [(ngModel)]="secondRegisterDto.homeVisit" name="homeVisit" class="checkbox-input">
+      </div>
+      <div class="checkbox-container">
+        <label for="onlineCounseling" class="checkbox-label">Чи проводите ви онлайн консультацію?</label>
+        <input type="checkbox" id="onlineCounseling" [(ngModel)]="secondRegisterDto.onlineCounseling" name="onlineCounseling" class="checkbox-input">
+      </div>
+      <div class="checkbox-container" *ngIf="secondRegisterDto.type === 'MASTER'">
+        <label for="atSalon" class="checkbox-label">Приймаєте клієнтів у салоні?</label>
+        <input type="checkbox" id="atSalon" [(ngModel)]="secondRegisterDto.atSalon" name="atSalon" class="checkbox-input">
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn default-main-btn">Next</button>
+
+    <div class="error-container" *ngIf="showErrorContainer">
+      <p class="error-message">{{ errorMessage }}</p>
+    </div>
+  </form>
+</section>

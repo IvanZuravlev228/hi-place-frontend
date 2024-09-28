@@ -1,0 +1,20 @@
+.warning-modal-container {
+  background-color: white;
+  text-align: center;
+  align-items: center;
+  max-width: 700px;
+  padding: 30px;
+}
+
+.dialog-title {
+  color: green;
+}
+
+.dialog-content {
+  color: black;
+  font-size: 18px;
+}
+
+.action-btn {
+  padding: 10px 20px;
+}

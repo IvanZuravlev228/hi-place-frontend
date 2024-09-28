@@ -1,0 +1,22 @@
+.main-register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 50vh;
+  background-color: #F6F6F6;
+}
+
+.header-register {
+  width: 50%;
+  text-align: center;
+}
+
+.header-register h1 {
+  font-size: 30px;
+  font-family: 'Arial', 'Helvetica', 'Tahoma', sans-serif;
+}
+
+.header-register-icon {
+  width: 40px;
+}

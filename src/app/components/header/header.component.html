@@ -1,0 +1,31 @@
+<header class="header-wrapper">
+  <div class="header-container">
+    <div class="logo-container" (click)="goToHomePage()">
+      <img src="./assets/image/header/logo.png"
+           alt="Hi Place"
+           class="logo-img">
+    </div>
+
+    <div class="auth-container">
+      <div class="nav-button">
+        <a class="header-link" href="/home">HiPlace</a>
+      </div>
+      <div class="nav-button">
+        <a class="header-link" href="/discounts">Акції</a>
+      </div>
+      <div class="nav-button">
+        <a class="header-link" href="/about">Про нас</a>
+      </div>
+
+      <div class="nav-button" *ngIf="!isUserRegistered">
+        <a class="header-link" href="/user/auth/register">Зареєструватися</a>
+      </div>
+      <div class="nav-button" *ngIf="!isUserRegistered">
+        <a class="header-link" (click)="goToLoginPage()">Увійти</a>
+      </div>
+      <button class="profile-icon-btn" (click)="goToLoginPage()"  *ngIf="isUserRegistered">
+        <img class="profile-icon" src="assets/image/icons/profile.svg" alt="login-image" title="Увійти">
+      </button>
+    </div>
+  </div>
+</header>

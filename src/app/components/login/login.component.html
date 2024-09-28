@@ -1,0 +1,26 @@
+<app-header></app-header>
+
+<div class="login-wrapper">
+  <div class="login-container">
+    <h1>Раді тебе бачити</h1>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input type="email" id="email" [(ngModel)]="userLogin.email" name="email" required class="form-input" placeholder=" ">
+        <label for="email" class="form-label">Email</label>
+        <div class="incorrect-input-data" *ngIf="isEmailCorrect">
+          {{ messageAboutEmail }}
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="password" id="password" [(ngModel)]="userLogin.password" name="password" required class="form-input" placeholder=" ">
+        <label for="password" class="form-label">Password</label>
+        <div class="incorrect-input-data" *ngIf="isPasswordCorrect">
+          {{ messageAboutPassword }}
+        </div>
+      </div>
+      <button type="submit" class="submit-button default-main-btn">Увійти</button>
+    </form>
+  </div>
+</div>
+
+<app-footer></app-footer>

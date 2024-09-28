@@ -1,0 +1,166 @@
+.profile-main-container {
+  display: flex;
+  justify-content: space-between;
+  min-height: 80vh;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.user-container {
+  padding: 20px 10px;
+  width: 30%;
+  text-align: center;
+}
+
+.address-container {
+  padding: 15px;
+}
+
+.address-name {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.address-name-item {
+  margin-bottom: 5px;
+}
+
+.map-pointer-icon {
+  width: 20px;
+}
+
+#show-map-btn {
+  background-color: transparent;
+  color: blue;
+  font-size: 18px;
+  transition: font-size 0.3s ease;
+}
+
+#show-map-btn:hover {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.address-map {
+  display: block;
+  width: 100%;
+  height: 400px;
+}
+
+.service-block-container {
+  width: 65%;
+  padding: 10px;
+}
+
+.app-image-container {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 15px;
+}
+
+.change-mode-btn {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 10px;
+  /*width: 400px;*/
+}
+
+.mode-change {
+  padding: 5px 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+.mode-change:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.mode-change.active {
+  padding: 7px 22px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid white;
+}
+
+.mode-text {
+  margin: 0;
+}
+
+.change-mode-btn-image {
+  width: 20px;
+  padding: 5px;
+  border-radius: 3px;
+  transition: background-color 0.5s ease, width 0.5s ease;
+}
+
+.change-mode-btn-image:hover {
+  cursor: pointer;
+  background-color: #f1f1f1;
+  width: 25px;
+}
+
+.type-counts-item {
+  margin-bottom: 10px;
+}
+
+.type-counts-btn {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 20px;
+  text-align: left;
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: rgba(255, 215, 203, 1);
+  transition: background-color 0.3s ease;
+}
+
+.type-counts-btn:hover {
+  background-color: rgba(255, 215, 203, 0.5);
+  cursor: pointer;
+}
+
+.price-profile-container {
+
+}
+
+.price-profile-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 10px 7px 50px;
+  background-color: rgba(255, 215, 203, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.price-profile-item:hover {
+  background-color: rgba(229, 229, 229, 0.3);
+}
+
+.price-profile-service-name {
+
+}
+
+.price-profile-price {
+
+}
+
+.add-address-btn {
+  padding: 10px 30px;
+}
+
+.arrow-icon {
+  display: inline-block;
+  width: 15px;
+  background-image: url('/assets/image/icons/down-arrow.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.arrow-icon.up {
+  transform: rotate(180deg);
+}

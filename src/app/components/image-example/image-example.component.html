@@ -1,0 +1,23 @@
+<div class="example-wrapper">
+  <div class="example-container">
+    <button class="position-btn" (click)="prevImage()" [disabled]="currentIndex === 0">←</button>
+
+    <div class="scroll-container">
+      <img class="example-img"
+           [src]="examples[currentIndex].path"
+           alt="Ваше фото скоро з'явиться"
+           (click)="openModal(examples[currentIndex].path)">
+    </div>
+
+    <button class="position-btn" (click)="nextImage()" [disabled]="currentIndex === examples.length - 1">→</button>
+  </div>
+  <div class="dots-container">
+    <div class="dots">
+      <span *ngFor="let image of examples; let i = index" [class.active]="i === currentIndex"></span>
+    </div>
+  </div>
+</div>
+
+<div class="modal" *ngIf="isModalOpen" (click)="closeModal()">
+  <img [src]="modalImageSrc" class="modal-content">
+</div>

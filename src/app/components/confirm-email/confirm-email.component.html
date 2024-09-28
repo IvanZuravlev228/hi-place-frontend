@@ -1,0 +1,11 @@
+<app-header></app-header>
+
+<main class="verify-wrapper">
+  <div class="success-container" *ngIf="successVerified">
+    <h2>Верифікація пройдена успішно. Ми раді, що Ви з нами!</h2>
+  </div>
+
+  <div class="fail-container" *ngIf="!successVerified">
+    <h2>Під час верифікації щось пішло не так, зверніться на пошту підтримки: hiplace6@gmail.com</h2>
+  </div>
+</main>

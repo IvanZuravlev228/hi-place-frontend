@@ -1,0 +1,16 @@
+.pagination-btns-container {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination-btns {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination-btn {
+  font-size: 24px;
+  padding: 1px 25px;
+  border-radius: 5px;
+}

@@ -1,0 +1,41 @@
+<app-loading [isLoading]="startLoading"></app-loading>
+
+<section class="register-step-container">
+  <form (ngSubmit)="onSubmit()" class="form">
+    <div class="form-group">
+      <div class="input-wrapper">
+        <input type="url" id="tiktokLink" [(ngModel)]="thirdUserRegister.tiktokLink" name="tiktokLink" class="form-input" placeholder=" " (ngModelChange)="validateTikTokLink(thirdUserRegister.tiktokLink)">
+        <label for="tiktokLink" class="form-label">TikTok</label>
+        <div *ngIf="!validateTikTokLink(thirdUserRegister.tiktokLink) && thirdUserRegister.tiktokLink" class="error">Invalid TikTok link</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-wrapper">
+        <input type="url" id="instagramLink" [(ngModel)]="thirdUserRegister.instagramLink" name="instagramLink" class="form-input" placeholder=" " (ngModelChange)="validateInstagramLink(thirdUserRegister.instagramLink)">
+        <label for="instagramLink" class="form-label">Instagram</label>
+        <div *ngIf="!validateInstagramLink(thirdUserRegister.instagramLink) && thirdUserRegister.instagramLink" class="error">Invalid Instagram link</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-wrapper">
+        <input type="url" id="telegramLink" [(ngModel)]="thirdUserRegister.telegramLink" name="telegramLink" class="form-input" placeholder=" " (ngModelChange)="validateTelegramLink(thirdUserRegister.telegramLink)">
+        <label for="telegramLink" class="form-label">Telegram</label>
+        <div *ngIf="!validateTelegramLink(thirdUserRegister.telegramLink) && thirdUserRegister.telegramLink" class="error">Invalid Telegram link</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-wrapper">
+        <input type="url" id="viberLink" [(ngModel)]="thirdUserRegister.viberLink" name="viberLink" class="form-input" placeholder=" " (ngModelChange)="validateViberLink(thirdUserRegister.viberLink)">
+        <label for="viberLink" class="form-label">Viber</label>
+        <div *ngIf="!validateViberLink(thirdUserRegister.viberLink) && thirdUserRegister.viberLink" class="error">Invalid Viber link</div>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn default-main-btn">Next</button>
+
+    <div class="error-container" *ngIf="showErrorContainer">
+      <p class="error-message">{{ errorMessage }}</p>
+    </div>
+  </form>
+
+</section>

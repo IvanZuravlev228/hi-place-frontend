@@ -1,0 +1,32 @@
+<section class="sort-container">
+  <h3>Фильтр</h3>
+  <div class="input-container">
+    <div>
+      <input type="radio" id="typeSalon" name="sortByType" value="SALON" [(ngModel)]="sort.sortByType" required>
+      <label for="typeSalon">Салон краси</label>
+    </div>
+    <div>
+      <input type="radio" id="typeMaster" name="sortByType" value="MASTER" [(ngModel)]="sort.sortByType" required>
+      <label for="typeMaster">Майстер</label>
+    </div>
+  </div>
+
+  <div class="input-container">
+    <input type="checkbox" id="atSalon" name="sortByAtSalon" [(ngModel)]="sort.sortByAtSalon">
+    <label for="atSalon">Прийом у салоні</label>
+  </div>
+
+  <div class="input-container">
+    <input type="checkbox" id="homeVisit" name="sortByHomeVisit" [(ngModel)]="sort.sortByHomeVisit">
+    <label for="homeVisit">Виїзд додому</label>
+  </div>
+
+  <div class="input-container">
+    <input type="checkbox" id="onlineCounseling" name="sortByOnlineCounseling" [(ngModel)]="sort.sortByOnlineCounseling">
+    <label for="onlineCounseling">Онлайн консультація</label>
+  </div>
+
+  <app-user-location></app-user-location>
+
+  <button class="sort-btn default-main-btn" (click)="find()">Пошук</button>
+</section>

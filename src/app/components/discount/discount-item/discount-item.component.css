@@ -1,0 +1,109 @@
+.discount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px;
+  border-radius: 15px;
+  border: 1px black solid;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.discount:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.delete-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 5%;
+  transition: background-color 0.4s ease;
+  height: 200px;
+  border-radius: 5px;
+}
+
+.delete-container:hover {
+  background-color: #fe7575;
+}
+
+.delete-icon {
+  width: 25px;
+}
+
+.discount-item {
+  padding: 0 15px;
+  width: 70%;
+}
+
+.d-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  width: 450px;
+  margin-bottom: 25px;
+}
+
+.d-title h2 {
+  font-size: 32px;
+}
+
+#input-discount-title {
+
+}
+
+.d-discount {
+  width: 70px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: rgba(255, 215, 203, 1);
+  border: 1px red solid;
+}
+
+.d-description-container {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.d-description-text {
+  line-height: 1.5;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.d-date-container {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.setting-btn {
+  width: 150px;
+  padding: 10px 0;
+}
+
+.select-types-container {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.photo-container {
+}
+
+.d-photo {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 260px;
+}

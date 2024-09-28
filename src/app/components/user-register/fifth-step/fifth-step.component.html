@@ -1,0 +1,22 @@
+<app-loading [isLoading]="startLoading"></app-loading>
+
+<section class="register-step-container">
+
+  <div class="preview-user-logo" *ngIf="preview">
+    <img [src]="preview" class="user-logo-img">
+  </div>
+
+  <form (ngSubmit)="onSubmit()" class="form">
+    <div class="form-group">
+      <input type="file" (change)="selectFile($event)" accept="image/*" class="form-input">
+      <div class="incorrect-input-data">
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn default-main-btn">Finish registration</button>
+
+    <div class="error-container" *ngIf="showErrorContainer">
+      <p class="error-message">{{ errorMessage }}</p>
+    </div>
+  </form>
+</section>

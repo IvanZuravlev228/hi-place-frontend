@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+<section class="discounts-container">
+  <div class="types-container">
+    <h3>Послуги з акціями</h3>
+    <div class="types" *ngFor="let type of typeOfServices">
+      <div class="type-item"
+           [ngClass]="{'selected': selectedTypeId === type.id}" (click)="getDiscountsByTypeId(type.id)">
+        <p>{{type.name}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="discounts">
+    <div class="discounts-item" *ngFor="let discount of discounts">
+      <app-discount-item [discount]="discount"></app-discount-item>
+    </div>
+    <div class="pagination-btns-container">
+      <div class="pagination-btns">
+        <button class="pagination-btn default-main-btn"
+                (click)="previousPage()"
+                ><</button>
+        <button class="pagination-btn default-main-btn"
+                (click)="nextPage()"
+                >></button>
+      </div>
+    </div>
+  </div>
+</section>

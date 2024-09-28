@@ -1,0 +1,33 @@
+<app-header></app-header>
+
+<main class="home-main-container default-main-block">
+  <section class="about-service-container">
+    <h2 class="section-name">Наш сервіс</h2>
+
+    <div class="line"></div>
+
+    <p class="text-about">
+      На нашому сайті ви можете знайти найкращого майстра або салон краси поруч із вами і з найприємнішими цінами
+    </p>
+
+    <div class="service-item-container">
+      <div class="service-item"
+           *ngFor="let item of serviceItems; let i = index"
+           [class.hidden]="i >= visibleItemsCount"
+           [id]="item.id"
+           [ngStyle]="{'background-image': 'url(' + item.image + ')'}"
+           (click)="goToServicePage(item.dbID)">
+
+        <div class="overlay">
+          <button class="overlay-btn" (click)="goToServicePage(item.dbID)">{{ item.name }}</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="more-button-container" *ngIf="visibleItemsCount < serviceItems.length">
+      <button class="more-button" (click)="showMoreItems()">Показати всі послуги</button>
+    </div>
+  </section>
+</main>
+
+<app-footer></app-footer>

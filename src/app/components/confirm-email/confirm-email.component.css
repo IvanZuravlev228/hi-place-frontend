@@ -1,0 +1,30 @@
+.verify-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.success-container, .fail-container {
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 600px;
+}
+
+.success-container {
+  background-color: #d4edda;
+  color: #155724;
+  border: 2px solid #c3e6cb;
+}
+
+.fail-container {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 2px solid #f5c6cb;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}

@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+<main class="main-register-container">
+  <div class="header-register">
+    <h1>{{ currentHeaderMessage }}</h1>
+    <img [src]="currentPathToIcon" class="header-register-icon">
+  </div>
+
+  <app-first-step (userRegisteredId)="receiveDataFirstStep($event)"
+                  *ngIf="showFirstStep"></app-first-step>
+
+  <app-second-step [userRegisteredId]="userRegisteredId"
+                   *ngIf="showSecondStep"
+                   (userRegisteredIdOutput)="receiveDataSecondStep($event)"></app-second-step>
+
+  <app-third-step [userRegisteredId]="userRegisteredId"
+                  *ngIf="showThirdStep"
+                  (userRegisteredIdOutput)="receiveDataThirdStep($event)"></app-third-step>
+
+  <app-fourth-step [userRegisteredId]="userRegisteredId"
+                   *ngIf="showFourthStep"
+                   (successSavedAddress)="receiveDataFourthStep($event)"></app-fourth-step>
+
+  <app-fifth-step [userRegisteredId]="userRegisteredId"
+                  *ngIf="showFifthStep"
+                  (successSavedPhoto)="receiveDataFifthStep($event)"></app-fifth-step>
+</main>
+
+<app-footer></app-footer>
