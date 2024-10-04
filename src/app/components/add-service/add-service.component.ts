@@ -15,7 +15,7 @@ import {UserServiceImagesResponse} from "../../models/UserServiceImagesResponse"
 @Component({
   selector: 'app-add-service',
   templateUrl: './add-service.component.html',
-  styleUrls: ['./add-service.component.css']
+  styleUrls: ['./add-service.component.css', './add-service.optimization.components.css']
 })
 export class AddServiceComponent implements OnInit {
   private userId: number = 0;

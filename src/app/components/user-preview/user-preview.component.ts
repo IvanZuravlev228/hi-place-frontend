@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'app-user-preview',
   templateUrl: './user-preview.component.html',
-  styleUrls: ['./user-preview.component.css']
+  styleUrls: ['./user-preview.component.css', './user-preview.optimization.component.css']
 })
 export class UserPreviewComponent implements OnInit{
   private hiddenPhoneMask: string = "+380 (**) *** ** **";

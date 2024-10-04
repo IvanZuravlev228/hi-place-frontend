@@ -6,7 +6,7 @@ import {DiscountService} from "../../../services/discount.service";
 @Component({
   selector: 'app-discount-item',
   templateUrl: './discount-item.component.html',
-  styleUrls: ['./discount-item.component.css']
+  styleUrls: ['./discount-item.component.css', './discount-item.component.optimization.css']
 })
 export class DiscountItemComponent {
   @Input() discount!: Discount;

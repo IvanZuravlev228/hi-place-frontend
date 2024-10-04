@@ -3,12 +3,11 @@ import {DiscountService} from "../../services/discount.service";
 import {Discount} from "../../models/Discount";
 import {TypeOfServiceService} from "../../services/type-of-service.service";
 import {TypeOfService} from "../../models/typeService/TypeOfService";
-import {environment} from "../../../environment/environment";
 
 @Component({
   selector: 'app-discount',
   templateUrl: './discount.component.html',
-  styleUrls: ['./discount.component.css', '../../../assets/styles/pagination-btns.css']
+  styleUrls: ['./discount.component.css', '../../../assets/styles/pagination-btns.css', './discount.optimization.components.css']
 })
 export class DiscountComponent implements OnInit{
   discounts: Discount[] = [];

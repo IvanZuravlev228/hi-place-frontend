@@ -5,10 +5,15 @@
 
 .footer-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 1300px;
+  flex-direction: row;
+  justify-content: space-around;
   margin: 0 auto;
+}
+
+.level-block {
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
 }
 
 .footer-h {
@@ -28,13 +33,12 @@
   font-size: 16px;
 }
 
-.footer-about,
-.footer-links,
-.footer-contact {
+.item-block {
   flex: 1;
-  min-width: 300px;
+  width: 400px;
   margin-bottom: 20px;
   padding: 5px 10px;
+  text-align: center;
 }
 
 .contact-data {
@@ -42,47 +46,46 @@
   text-decoration: none;
 }
 
-.footer-about p,
-.footer-contact p {
+.item-block p {
   margin: 10px 0;
 }
 
-.footer-links ul {
+.item-block ul {
   list-style: none;
   padding: 0;
 }
 
-.footer-links ul li {
+.item-block ul li {
   margin-bottom: 10px;
 }
 
-.footer-links ul li a {
+.item-block ul li a {
   color: black;
   font-size: 16px;
   text-decoration: none;
   transition: color 0.3s;
 }
 
-.footer-links ul li a:hover {
+.item-block ul li a:hover {
   color: #ff69b4;
 }
 
-.footer-social {
+.items {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.footer-social a {
+.item-block a {
   transition: transform 0.3s;
 }
 
-.footer-social a img {
+.item-block a img {
   width: 35px;
 }
 
-.footer-social a:hover {
+.item-block a:hover {
   transform: scale(1.2);
 }
 

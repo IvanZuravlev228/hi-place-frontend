@@ -1,0 +1,17 @@
+@media (max-width: 1700px) {
+
+}
+
+@media (max-width: 1440px) {
+  .types-container h3 {
+    font-size: 24px;
+  }
+
+  .type-item p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1100px) {
+
+}

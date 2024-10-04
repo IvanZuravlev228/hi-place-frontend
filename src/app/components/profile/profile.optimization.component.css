@@ -1,0 +1,13 @@
+@media (max-width: 1100px) {
+  .profile-main-container {
+    display: block;
+  }
+
+  .user-container {
+    width: 100%;
+  }
+
+  .service-block-container {
+    width: 100%;
+  }
+}
