@@ -1,0 +1,16 @@
+@media (max-width: 1440px) {
+  .service-item {
+    width: 250px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .text-about {
+    width: 500px;
+  }
+
+  .service-item-container {
+    width: 700px;
+  }
+}

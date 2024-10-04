@@ -1,0 +1,30 @@
+@media (max-width: 1700px) {
+  .level-block {
+    justify-content: space-between;
+    width: 500px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .footer-container {
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 1000px;
+  }
+
+  .level-block {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1100px) {
+
+}

@@ -5,7 +5,7 @@ import {CookieService} from "ngx-cookie-service";
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css', './header.optimization.component.css']
 })
 export class HeaderComponent implements OnInit{
   isUserRegistered: boolean = true;

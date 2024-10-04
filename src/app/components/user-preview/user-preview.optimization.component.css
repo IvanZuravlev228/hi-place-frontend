@@ -1,0 +1,9 @@
+@media (max-width: 1100px) {
+  .social-feedback-container {
+    display: block;
+  }
+
+  .social {
+    justify-content: left;
+  }
+}
