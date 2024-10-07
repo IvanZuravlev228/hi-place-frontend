@@ -33,6 +33,7 @@ export class ProfileComponent implements OnInit {
   showModifyContainers: boolean = false;
   showAddDiscount: boolean = false;
   activeButtonIndex: number = 0;
+  showAddReview: boolean = true;
 
   constructor(private activatedRoute: ActivatedRoute,
               private addressService: AddressService,
@@ -202,5 +203,15 @@ export class ProfileComponent implements OnInit {
 
    private toggleDropdown(typeCounts: TypeOfServiceCount) {
     typeCounts.isOpen = true;
+  }
+
+  isAddReviewVisible = false;
+
+  openModal() {
+    this.isAddReviewVisible = true;
+  }
+
+  closeModal() {
+    this.isAddReviewVisible = false;
   }
 }

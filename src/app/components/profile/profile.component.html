@@ -95,4 +95,14 @@
   </div>
 </section>
 
+<section class="reviews-section" id="scroll-review">
+  <div class="title-container">
+    <h1>Відгуки</h1>
+
+    <button class="add-review-btn default-main-btn" (click)="openModal()">+ Додати відгук</button>
+  </div>
+  <app-add-review [isVisible]="isAddReviewVisible" [userId]="userId" (close)="closeModal()"></app-add-review>
+  <app-review [userId]="userId"></app-review>
+</section>
+
 <app-footer></app-footer>

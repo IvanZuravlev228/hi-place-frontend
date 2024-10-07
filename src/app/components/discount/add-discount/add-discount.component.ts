@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Discount} from "../../../models/Discount";
 import {DiscountService} from "../../../services/discount.service";
-import {environment} from "../../../../environment/environment";
 import {DiscountRequestDto} from "../../../models/DiscountRequestDto";
 import {UploadFileService} from "../../../services/upload-file.service";
 import {TypeOfService} from "../../../models/typeService/TypeOfService";

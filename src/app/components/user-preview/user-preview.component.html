@@ -8,9 +8,7 @@
   <p id="user-name">{{ user.name }}</p>
 
   <div id="user-avg">
-    <ng-container *ngFor="let star of getStars(user.avg)">
-      <i class="fa-star" [ngClass]="star" style="color: gold;"></i>
-    </ng-container>
+    <app-star-rating [stars]="user.avg"></app-star-rating>
   </div>
 
   <div class="experience">
@@ -52,7 +50,7 @@
     </div>
   </div>
   <div class="feedback">
-    <a href="#">Відгуки</a>
+    <button (click)="scrollToReview()">Відгуки</button>
   </div>
 
   <div class="address-container" *ngIf="addresses.length > 0">

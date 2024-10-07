@@ -41,6 +41,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
+import { ReviewComponent } from './components/review/review.component';
+import { ReviewItemComponent } from './components/review/review-item/review-item.component';
+import { StarRatingComponent } from './components/ui/star-rating/star-rating.component';
+import { AddReviewComponent } from './components/review/add-review/add-review.component';
+import { ModalComponent } from './modals/modal/modal.component';
+import { SelectStarsComponent } from './components/ui/select-stars/select-stars.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +78,12 @@ import { MatSelectModule } from '@angular/material/select';
     DiscountComponent,
     DiscountItemComponent,
     AddDiscountComponent,
+    ReviewComponent,
+    ReviewItemComponent,
+    StarRatingComponent,
+    AddReviewComponent,
+    ModalComponent,
+    SelectStarsComponent,
   ],
   imports: [
     BrowserModule,

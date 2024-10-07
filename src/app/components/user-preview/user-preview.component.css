@@ -70,8 +70,11 @@
   padding: 2px;
 }
 
-.feedback {
-
+.feedback button {
+  font-size: 16px;
+  color: blue;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .address-item {

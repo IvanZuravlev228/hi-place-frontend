@@ -1,0 +1,27 @@
+.review-item {
+}
+
+.item {
+  margin-bottom: 60px;
+}
+
+.client-photo-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.client-photo {
+  width: 35px;
+  border-radius: 5px;
+}
+
+.client-name {
+  margin-left: 15px;
+  font-size: 20px;
+}
+
+.star-addedDate-container {
+  display: flex;
+  width: 200px;
+  justify-content: space-around;
+}
