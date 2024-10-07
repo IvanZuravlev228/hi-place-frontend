@@ -1,0 +1,17 @@
+<div class="review-item">
+  <div class="item">
+    <div class="client-photo-container">
+      <img class="client-photo" src="./assets/image/icons/unknown-client.svg">
+      <p class="client-name">{{client.name}}</p>
+    </div>
+
+    <div class="star-addedDate-container">
+      <div class="star-container">
+        <app-star-rating [stars]="review.point"></app-star-rating>
+      </div>
+      - <p>{{review.formatedAddedDate}}</p>
+    </div>
+
+    <p class="feedback">{{review.feedback}}</p>
+  </div>
+</div>

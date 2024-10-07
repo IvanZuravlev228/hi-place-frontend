@@ -195,7 +195,7 @@ export class AddServiceComponent implements OnInit {
     }
 
     this.isDialogOpen = true;
-    const dialogRef =this.dialog.open(WarningModuleComponent, {
+    const dialogRef = this.dialog.open(WarningModuleComponent, {
       data: {
         title: 'Потрібно трохи почекати',
         message: 'Дані будуть оновлені найближчим часом. Будь ласка, зачекайте трохи)'

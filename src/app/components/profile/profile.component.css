@@ -63,7 +63,6 @@
   justify-content: left;
   align-items: center;
   padding: 10px;
-  /*width: 400px;*/
 }
 
 .mode-change {
@@ -123,10 +122,6 @@
   cursor: pointer;
 }
 
-.price-profile-container {
-
-}
-
 .price-profile-item {
   display: flex;
   justify-content: space-between;
@@ -137,14 +132,6 @@
 
 .price-profile-item:hover {
   background-color: rgba(229, 229, 229, 0.3);
-}
-
-.price-profile-service-name {
-
-}
-
-.price-profile-price {
-
 }
 
 .add-address-btn {
@@ -163,4 +150,19 @@
 
 .arrow-icon.up {
   transform: rotate(180deg);
+}
+
+.reviews-section {
+  background-color: #F6F6F6;
+  padding: 15px 20px;
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-review-btn {
+  padding: 10px 20px;
 }

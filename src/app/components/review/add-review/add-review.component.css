@@ -1,0 +1,49 @@
+.add-review-container {
+  width: 500px;
+  text-align: center;
+}
+
+.star-block {
+  margin-bottom: 15px;
+}
+
+.client-data-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.review-input {
+  padding: 7px 10px;
+  border-radius: 5px;
+  background-color: #F6F6F6;
+}
+
+.input-review-feedback {
+  min-width: 450px;
+  max-width: 500px;
+  min-height: 130px;
+  max-height: 140px;
+  line-height: 1.5;
+  white-space: normal;
+  overflow-wrap: break-word;
+  background-color: #F6F6F6;
+  padding: 15px 15px;
+}
+
+.review-container {
+  margin-bottom: 15px;
+}
+
+.save-container {
+  margin-bottom: 15px;
+}
+
+.save-review-btn {
+  padding: 10px 15px;
+}
+
+.error-container p {
+  color: red;
+}

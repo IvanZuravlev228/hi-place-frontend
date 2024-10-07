@@ -1,0 +1,40 @@
+<app-modal [isVisible]="isVisible" (close)="handleModalClose()">
+  <div class="add-review-container">
+    <div class="star-block">
+      <app-select-stars (ratingSelected)="onRatingSelected($event)"></app-select-stars>
+
+    </div>
+
+    <div class="client-data-container">
+      <div class="client-name">
+        <input type="text" id="name" [(ngModel)]="review.clientName" required placeholder="Ім'я" class="review-input">
+      </div>
+      <div class="client-email">
+        <input type="email" id="email" [(ngModel)]="review.clientEmail" required placeholder="Email-адреса" class="review-input">
+      </div>
+    </div>
+
+    <div class="review-container">
+      <textarea class="input-review-feedback"
+                type="text"
+                maxlength="400"
+                [(ngModel)]="review.feedback"
+                name="description"
+                required
+                placeholder="Напишіть про свій досвід, навіть якщо він негативний"></textarea>
+            <p class="d-description-count">{{ review.feedback.length }} / 200 символів</p>
+    </div>
+
+    <div class="save-container">
+      <button class="save-review-btn default-main-btn" (click)="submit()">save</button>
+    </div>
+
+    <div class="error-container" *ngIf="showErrorContainer">
+      <p>{{errorMessage}}</p>
+    </div>
+  </div>
+</app-modal>
+
+
+
+

@@ -36,27 +36,27 @@ export class UserPreviewComponent implements OnInit{
     user.hiddenPhone = user.phone;
   }
 
-  public getStars(rating: number): string[] {
-    const stars = [];
-    for (let i = 1; i <= 5; i++) {
-      if (i <= rating) {
-        stars.push('fas fa-star');
-      } else if (i - 0.5 <= rating) {
-        stars.push('fas fa-star-half-alt');
-      } else {
-        stars.push('far fa-star');
-      }
-    }
-    return stars;
-  }
+  // public getStars(rating: number): string[] {
+  //   const stars = [];
+  //   for (let i = 1; i <= 5; i++) {
+  //     if (i <= rating) {
+  //       stars.push('fas fa-star');
+  //     } else if (i - 0.5 <= rating) {
+  //       stars.push('fas fa-star-half-alt');
+  //     } else {
+  //       stars.push('far fa-star');
+  //     }
+  //   }
+  //   return stars;
+  // }
 
-  public goToProfile() {
-    this.router.navigate(["user/profile"], {
-      queryParams: {
-        userId: this.userId
-      }
-    })
-  }
+  // public goToProfile() {
+  //   this.router.navigate(["user/profile"], {
+  //     queryParams: {
+  //       userId: this.userId
+  //     }
+  //   })
+  // }
 
   private getUserById(userId: number) {
     this.userService.getUserById(userId).subscribe({
@@ -84,5 +84,12 @@ export class UserPreviewComponent implements OnInit{
         console.log(error);
       }
     })
+  }
+
+  scrollToReview() {
+    const element = document.getElementById('scroll-review');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }

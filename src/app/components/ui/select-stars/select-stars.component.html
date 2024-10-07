@@ -1,0 +1,9 @@
+<ng-container *ngFor="let star of getStars(); let i = index">
+  <i class="fa-star"
+     [ngClass]="(hoveredStar ? (i + 1 <= hoveredStar ? 'fas fa-star' : 'far fa-star') : star)"
+     (click)="selectRating(i + 1)"
+     (mouseover)="setHoveredStar(i + 1)"
+     (mouseleave)="clearHoveredStar()"
+     style="color: gold; cursor: pointer; font-size: 20px;">
+  </i>
+</ng-container>
