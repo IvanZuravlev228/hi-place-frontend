@@ -112,16 +112,15 @@
 }
 
 .price-submit-btn {
-  background-color: #c1ffc1;
   width: 100%;
-  padding: 7px 0;
+  padding: 10px 0;
   font-size: 18px;
-  transition: background-color 0.3s ease, font-size 0.5s ease;
-  border-radius: 4px;
+  /*transition: background-color 0.3s ease, font-size 0.5s ease;*/
+  /*border-radius: 4px;*/
 }
 
 .price-submit-btn:hover {
-  cursor: pointer;
+  /*cursor: pointer;*/
   background-color: #adffad;
-  font-size: 22px;
+  /*font-size: 22px;*/
 }

@@ -5,7 +5,7 @@
     <app-address (selectedAddressEmit)="onAddressSelected($event)"></app-address>
   </div>
   <button class="skip-btn default-main-btn" (click)="skipAddAddress()">Skip</button>
-  <button class="submit-btn default-main-btn" (click)="submit()">Next</button>
+  <button class="submit-btn default-main-btn" (click)="submit()">Далі</button>
 
   <div class="error-container" *ngIf="showErrorContainer">
     <p class="error-message">{{ errorMessage }}</p>

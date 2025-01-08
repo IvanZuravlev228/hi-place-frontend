@@ -16,12 +16,13 @@ import {CookieService} from "ngx-cookie-service";
   styleUrls: ['./profile.component.css', './profile.optimization.component.css']
 })
 export class ProfileComponent implements OnInit {
+  private DEFAULT_OPEN_PRICES: number = 1;
+
   userId: number = 0;
   addresses: Address[] = [];
   addressLat: number = 0;
   addressLon: number = 0;
 
-  prices: Price[] = [];
   profilePriceData: TypeOfServiceCount[] = [];
   images: UserServiceImagesResponse[] = [];
   public receivedAddresses: Address[] | null = null;
@@ -33,7 +34,6 @@ export class ProfileComponent implements OnInit {
   showModifyContainers: boolean = false;
   showAddDiscount: boolean = false;
   activeButtonIndex: number = 0;
-  showAddReview: boolean = true;
 
   constructor(private activatedRoute: ActivatedRoute,
               private addressService: AddressService,
@@ -51,20 +51,8 @@ export class ProfileComponent implements OnInit {
     this.checkOwner();
 
     this.getAllTypeOfServiceCountByUserId();
-    this.getAllPriceByUserId(this.userId);
     this.getAllUserImages();
     this.getAllAddressesByUserId(this.userId);
-  }
-
-  public getAllPriceByUserId(userId: number) {
-    this.priceService.getAllByUser(userId).subscribe({
-      next: (prices) => {
-        this.prices = prices;
-      },
-      error: (error) => {
-        console.log(error);
-      }
-    })
   }
 
   public showMap(lat: number, lon: number) {
@@ -77,6 +65,10 @@ export class ProfileComponent implements OnInit {
       next: (typeOfServiceCounts) => {
         typeOfServiceCounts.forEach(t => t.isOpen = false);
         this.profilePriceData = typeOfServiceCounts;
+
+        for (let i = 0; i < this.DEFAULT_OPEN_PRICES; i++) {
+          this.getPriceByTypeOfService(this.profilePriceData[i].typeOfServiceId, this.profilePriceData[i]);
+        }
       },
       error: (error) => {
         console.log(error);

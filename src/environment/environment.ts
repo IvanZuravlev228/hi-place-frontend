@@ -1,4 +1,4 @@
 export const environment = {
   backendURL: "http://localhost:8080",
-  paginationUsersSize: 2
+  paginationUsersSize: 5
 }

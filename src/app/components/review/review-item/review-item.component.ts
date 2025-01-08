@@ -9,6 +9,10 @@ import {Client} from "../../../models/review/Client";
   styleUrls: ['./review-item.component.css']
 })
 export class ReviewItemComponent implements OnInit{
+  private readonly SECONDS_IN_DAY = 86400;
+  private readonly SECONDS_IN_MONTH = 2592000;
+  private readonly SECONDS_IN_YEAR = 31536000;
+
   @Input() review!: ReviewResponseDto;
   client: Client = new Client();
 
@@ -20,53 +24,47 @@ export class ReviewItemComponent implements OnInit{
   }
 
   public unixDateToCorrectFormat(unixDate: number): string {
-    console.log("unixDateToCorrectFormat")
-    const secondsInDay = 86400;
-    const secondsInMonth = 2592000;
-    const secondsInYear = 31536000;
-
     const now = Math.floor(Date.now() / 1000); // текущее время в секундах
     const diffInSeconds = now - unixDate;
 
-    if (diffInSeconds < secondsInDay) {
-      return 'Сегодня';
+    if (diffInSeconds < this.SECONDS_IN_DAY) {
+      return 'Сьогодні';
     }
 
-    const daysPassed = Math.floor(diffInSeconds / secondsInDay);
-    const monthsPassed = Math.floor(diffInSeconds / secondsInMonth);
-    const yearsPassed = Math.floor(diffInSeconds / secondsInYear);
+    const daysPassed = Math.floor(diffInSeconds / this.SECONDS_IN_DAY);
+    const monthsPassed = Math.floor(diffInSeconds / this.SECONDS_IN_MONTH);
+    const yearsPassed = Math.floor(diffInSeconds / this.SECONDS_IN_YEAR);
 
     if (daysPassed < 30) {
       if (daysPassed === 1) {
-        return '1 день назад';
+        return '1 день тому';
       } else if (daysPassed >= 2 && daysPassed <= 4) {
-        return `${daysPassed} дня назад`;
+        return `${daysPassed} дні тому`;
       } else {
-        return `${daysPassed} дней назад`;
+        return `${daysPassed} днів тому`;
       }
     }
 
     if (monthsPassed < 12) {
       if (monthsPassed === 1) {
-        return 'месяц назад';
+        return 'місяць тому';
       } else if (monthsPassed >= 2 && monthsPassed <= 4) {
-        return `${monthsPassed} месяца назад`;
+        return `${monthsPassed} місяця тому`;
       } else {
-        return `${monthsPassed} месяцев назад`;
+        return `${monthsPassed} місяців тому`;
       }
     }
 
     if (yearsPassed >= 1) {
       if (yearsPassed === 1) {
-        return 'год назад';
+        return 'рік тому';
       } else {
-        return `${yearsPassed} года назад`;
+        return `${yearsPassed} роки тому`;
       }
     }
 
     return '';
   }
-
 
   private getClientById() {
     this.clientService.getById(this.review.clientId).subscribe({

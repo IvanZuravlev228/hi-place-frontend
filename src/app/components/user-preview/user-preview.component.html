@@ -29,7 +29,7 @@
 
   <div class="social-feedback-container" *ngIf="user.instagramLink || user.tiktokLink || user.telegramLink || user.viberLink">
     <div>
-      <p class="hint-text">Наші соцмережі</p>
+      <p class="hint-text">Cоцмережі</p>
     </div>
     <div class="social">
       <a [href]="user.instagramLink" target="_blank">
@@ -54,7 +54,7 @@
   </div>
 
   <div class="address-container" *ngIf="addresses.length > 0">
-    <p class="hint-text">Ми знаходимося</p>
+    <p class="hint-text">Адреси</p>
     <div class="address-item" *ngFor="let address of addresses">
       <a href="https://www.google.com/maps/search/?api=1&query={{ address.city }},%20{{ address.road }}%20{{ address.houseNumber }}
 " target="_blank" rel="noopener noreferrer">{{ address.city }}, {{ address.road }} {{ address.houseNumber }}</a>
