@@ -4,6 +4,7 @@ import {User} from "../../models/User";
 import {AddressService} from "../../services/address.service";
 import {Address} from "../../models/Address";
 import {Router} from "@angular/router";
+import {StatisticService} from "../../services/statistic.service";
 
 @Component({
   selector: 'app-user-preview',
@@ -20,6 +21,7 @@ export class UserPreviewComponent implements OnInit{
 
   constructor(private userService: UserService,
               private addressService: AddressService,
+              private statisticService: StatisticService,
               private router: Router) {
   }
 
@@ -34,6 +36,8 @@ export class UserPreviewComponent implements OnInit{
 
   public revealPhone(user: User): void {
     user.hiddenPhone = user.phone;
+
+    this.clickTo("phone");
   }
 
   // public getStars(rating: number): string[] {
@@ -91,5 +95,11 @@ export class UserPreviewComponent implements OnInit{
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+
+    console.log("SCROLL")
+  }
+
+  public clickTo(item: string) {
+    this.statisticService.clickTo(item, this.userId);
   }
 }

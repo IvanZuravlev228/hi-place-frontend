@@ -1,0 +1,134 @@
+<div class="wrapper">
+  <div class="period-container">
+    <button class="period-item"
+            (click)="activateBtn(1); setStartTime(3)"
+            [ngClass]="{'active': activeBtn === 1}">3д</button>
+    <button class="period-item"
+            (click)="activateBtn(2); setStartTime(7)"
+            [ngClass]="{'active': activeBtn === 2}">7д</button>
+    <button class="period-item"
+            (click)="activateBtn(3); setStartTime(30)"
+            [ngClass]="{'active': activeBtn === 3}">1м</button>
+    <button class="period-item"
+            (click)="activateBtn(4); setStartTime(365)"
+            [ngClass]="{'active': activeBtn === 4}">1р</button>
+  </div>
+
+  <div class="data-container">
+    <div class="data-item">
+      <div class="data-value-container">
+        <p class="data-value">{{animStatisticData.phone}}</p>
+      </div>
+      <div class="data-footer">
+        <p class="data-label">Просмотров телефона</p>
+      </div>
+    </div>
+
+    <div class="data-item">
+      <div class="data-value-container">
+        <p class="data-value">{{animStatisticData.instagram}}</p>
+      </div>
+      <div class="data-footer">
+        <p class="data-label">Переходов на Instagram</p>
+      </div>
+    </div>
+
+    <div class="data-item">
+      <div class="data-value-container">
+        <p class="data-value">{{animStatisticData.tiktok}}</p>
+      </div>
+      <div class="data-footer">
+        <p class="data-label">Переходов на TikTok</p>
+      </div>
+    </div>
+
+    <div class="data-item">
+      <div class="data-value-container">
+        <p class="data-value">{{animStatisticData.telegram}}</p>
+      </div>
+      <div class="data-footer">
+        <p class="data-label">Переходов на Telegram</p>
+      </div>
+    </div>
+
+    <div class="data-item">
+      <div class="data-value-container">
+        <p class="data-value">{{animStatisticData.visit}}</p>
+      </div>
+      <div class="data-footer">
+        <p class="data-label">Просмотров страницы</p>
+      </div>
+    </div>
+
+    <div class="data-item">
+      <div class="data-value-container">
+        <p class="data-value">{{animStatisticData.listPosition}}</p>
+      </div>
+      <div class="data-footer">
+        <p class="data-label">Рейтинг среди пользователей</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="text-container">
+  <h1>Параметр вовлеченности: {{statisticData.interestingParam.toFixed(2)}}</h1>
+  <p *ngIf="statisticData.interestingParam < 1">
+    Параметр вовлеченности меньше 1-го.
+    Это значит, что люди посещают Вашу страницу, но не связываются с Вами.
+    Это может быть из-за высокой цены, плохой демонстрации работ или малоного набора услуг.
+    Подумайте, как можно улучшить Вашу страницу. Наблюдать за изменениями Вы сможете на этой же странице.
+    Свяжитесь с нашей командой HiPlace и мы Вам поможем)
+  </p>
+
+  <p *ngIf="statisticData.interestingParam >= 1 && statisticData.interestingParam < 2">
+    Параметр вовлеченности меньше 2-х.
+    Это значит, что каждое посещение принесло минимум 1 потенциального клиента, который захотел с Вами связаться.
+    Для увеличения потенциальных клиентов команда HiPlace советует выбрать только самые лучшие примеры работ и составить хорошее описание Вашего профиля.
+  </p>
+
+  <p *ngIf="statisticData.interestingParam >= 2 && statisticData.interestingParam < 4">
+    Параметр вовлеченности больше 2-х.
+    Это значит, что каждый потенциальный клиент посетил Ваши социальные сети или позвонил Вам. Это очень хороший результат.
+    Для того чтобы держаться на таком же уровне, команда HiPlace советует регулярно мониторить Вашу рейтинговую позицию и стоимость услуг на рынке.
+  </p>
+
+  <p *ngIf="statisticData.interestingParam > 6">
+    Параметр вовлеченности больше 6.
+    Возможна накрутка! Свяжитесь с командой HiPlace для уточнения деталей.
+  </p>
+</div>
+
+<div class="avg-price-container">
+  <h1>Сравнице свои цены с средними ценами на сайте!</h1>
+  <p>* в таблице отображаются услуги, у которых разница с рынком больше 1%</p>
+  <table class="avg-price-table">
+    <thead>
+    <tr>
+      <th>Услуга</th>
+      <th>Средняя цена</th>
+      <th>Ваша цена</th>
+      <th>Разница в цене</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of avgPriceByServiceItems">
+      <td>{{item.serviceItemName}}</td>
+      <td>{{item.avgPrice | number: '1.1-2'}}</td>
+      <td>{{item.price | number: '1.1-2'}}</td>
+      <td>
+        <p *ngIf="item.priceDifferentPercent > 0">
+          Ваша цена на {{item.priceDifferentPercent.toFixed(1)}}% ниже средней цены
+        </p>
+        <p *ngIf="item.priceDifferentPercent < 0">
+          Ваша цена на {{(-1 * item.priceDifferentPercent).toFixed(1)}}% выше средней цены
+        </p>
+        <p *ngIf="item.priceDifferentPercent === 0">
+          Ваша цена совпадает с средней
+        </p>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>

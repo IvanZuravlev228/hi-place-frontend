@@ -10,6 +10,7 @@ import {FooterComponent} from "./components/footer/footer.component";
 import {ConfirmEmailComponent} from "./components/confirm-email/confirm-email.component";
 import {LoginComponent} from "./components/login/login.component";
 import {DiscountComponent} from "./components/discount/discount.component";
+import {UserStatisticComponent} from "./components/user-statistic/user-statistic.component";
 
 const routes: Routes = [
   {path: '', component: MainComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'user/auth/register', component: UserRegisterComponent},
   {path: 'user/auth/login', component: LoginComponent},
   {path: 'user/profile', component: ProfileComponent},
+  {path: 'user/statistic', component: UserStatisticComponent},
   {path: 'services/add', component: AddServiceComponent},
   {path: 'footer', component: FooterComponent},
   {path: 'confirm-email', component: ConfirmEmailComponent},

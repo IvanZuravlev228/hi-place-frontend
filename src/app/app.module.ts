@@ -47,6 +47,8 @@ import { StarRatingComponent } from './components/ui/star-rating/star-rating.com
 import { AddReviewComponent } from './components/review/add-review/add-review.component';
 import { ModalComponent } from './modals/modal/modal.component';
 import { SelectStarsComponent } from './components/ui/select-stars/select-stars.component';
+import { UserStatisticComponent } from './components/user-statistic/user-statistic.component';
+import { CountUsersComponent } from './components/count-users/count-users.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +86,8 @@ import { SelectStarsComponent } from './components/ui/select-stars/select-stars.
     AddReviewComponent,
     ModalComponent,
     SelectStarsComponent,
+    UserStatisticComponent,
+    CountUsersComponent,
   ],
   imports: [
     BrowserModule,

@@ -32,19 +32,19 @@
       <p class="hint-text">Cоцмережі</p>
     </div>
     <div class="social">
-      <a [href]="user.instagramLink" target="_blank">
+      <a [href]="user.instagramLink" target="_blank" (click)="clickTo('instagram')">
         <img class="social-icon" src="assets/image/icons/instagram.png" *ngIf="user.instagramLink">
       </a>
 
-      <a [href]="user.tiktokLink" target="_blank">
+      <a [href]="user.tiktokLink" target="_blank" (click)="clickTo('tiktok')">
         <img class="social-icon" src="assets/image/icons/tiktok.png" *ngIf="user.tiktokLink">
       </a>
 
-      <a [href]="user.telegramLink" target="_blank">
+      <a [href]="user.telegramLink" target="_blank" (click)="clickTo('telegram')">
         <img class="social-icon" src="assets/image/icons/telegram.png" *ngIf="user.telegramLink">
       </a>
 
-      <a [href]="user.viberLink" target="_blank">
+      <a [href]="user.viberLink" target="_blank" (click)="clickTo('instagram')">
         <img class="social-icon" src="assets/image/icons/viber.png" *ngIf="user.viberLink">
       </a>
     </div>

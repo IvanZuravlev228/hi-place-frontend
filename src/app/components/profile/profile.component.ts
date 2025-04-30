@@ -9,6 +9,7 @@ import {TypeOfServiceCount} from "../../models/typeService/TypeOfServiceCount";
 import {UserImagesService} from "../../services/user-images.service";
 import {UserServiceImagesResponse} from "../../models/UserServiceImagesResponse";
 import {CookieService} from "ngx-cookie-service";
+import {StatisticService} from "../../services/statistic.service";
 
 @Component({
   selector: 'app-profile',
@@ -33,6 +34,7 @@ export class ProfileComponent implements OnInit {
   showAddAddress: boolean = false;
   showModifyContainers: boolean = false;
   showAddDiscount: boolean = false;
+  showStatistic: boolean = false;
   activeButtonIndex: number = 0;
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -40,6 +42,7 @@ export class ProfileComponent implements OnInit {
               private priceService: PriceService,
               private typeOfServiceService: TypeOfServiceService,
               private userImagesService: UserImagesService,
+              private statisticService: StatisticService,
               private cookie: CookieService) {
   }
 
@@ -119,6 +122,7 @@ export class ProfileComponent implements OnInit {
     this.showService = false;
     this.showAddAddress = true;
     this.showAddDiscount = false;
+    this.showStatistic = false;
   }
 
   public showPriceOnClick() {
@@ -126,6 +130,7 @@ export class ProfileComponent implements OnInit {
     this.showService = true;
     this.showAddAddress = false;
     this.showAddDiscount = false;
+    this.showStatistic = false;
   }
 
   public showDiscountOnClick() {
@@ -133,6 +138,15 @@ export class ProfileComponent implements OnInit {
     this.showService = false;
     this.showAddAddress = false;
     this.showAddDiscount = true;
+    this.showStatistic = false;
+  }
+
+  public showStatisticOnClick() {
+    this.showAddService = false;
+    this.showService = false;
+    this.showAddAddress = false;
+    this.showAddDiscount = false;
+    this.showStatistic = true;
   }
 
   public deleteAddress(addressId: number) {

@@ -39,6 +39,13 @@
                 *ngIf="showModifyContainers">
           <p class="mode-text">Адресса</p>
         </button>
+
+        <button class="mode-change"
+                (click)="activateButton(4); showStatisticOnClick()"
+                [ngClass]="{'active': activeButtonIndex === 4}"
+                *ngIf="showModifyContainers">
+          <p class="mode-text">Статистика</p>
+        </button>
       </div>
 
       <div class="address-container" *ngIf="showAddAddress">
@@ -70,6 +77,10 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="statistic-container" *ngIf="showStatistic">
+        <app-user-statistic [userId]="userId"></app-user-statistic>
       </div>
     </div>
   </section>

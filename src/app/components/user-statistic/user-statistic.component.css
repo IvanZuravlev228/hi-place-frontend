@@ -1,0 +1,93 @@
+.active {
+  background-color: #c9c9c9;
+  font-size: 16px;
+}
+
+.wrapper {
+  /*background-color: #1dd1a1;*/
+}
+
+.period-container {
+  border: 1px solid #c9c9c9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.period-item {
+  border-radius: 5px;
+  padding: 5px 10%;
+}
+
+.period-item:hover {
+  cursor: pointer;
+}
+
+.data-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.data-item {
+  width: 150px;
+  height: 150px;
+  background-color: #e7e7e7;
+  border: 1px solid #c9c9c9;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.data-value-container {
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.data-value {
+  font-size: 20px;
+}
+
+.data-footer {
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.data-label {
+  font-size: 16px;
+  text-align: center;
+}
+
+
+/*========TABLE========*/
+.avg-price-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.avg-price-table th, .avg-price-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.avg-price-table th {
+  background-color: #ececec;
+  text-align: center; /* Центрирование текста */
+}
+
+.avg-price-table td {
+  text-align: center; /* Центрирование текста */
+}
+
+.avg-price-table tbody tr:hover {
+  background-color: #ececec;
+}
+
+
