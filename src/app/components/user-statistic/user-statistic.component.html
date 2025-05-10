@@ -20,7 +20,7 @@
         <p class="data-value">{{animStatisticData.phone}}</p>
       </div>
       <div class="data-footer">
-        <p class="data-label">Просмотров телефона</p>
+        <p class="data-label">Переглядів телефону</p>
       </div>
     </div>
 
@@ -29,7 +29,7 @@
         <p class="data-value">{{animStatisticData.instagram}}</p>
       </div>
       <div class="data-footer">
-        <p class="data-label">Переходов на Instagram</p>
+        <p class="data-label">Переходів в Instagram</p>
       </div>
     </div>
 
@@ -38,7 +38,7 @@
         <p class="data-value">{{animStatisticData.tiktok}}</p>
       </div>
       <div class="data-footer">
-        <p class="data-label">Переходов на TikTok</p>
+        <p class="data-label">Переходів в TikTok</p>
       </div>
     </div>
 
@@ -47,7 +47,7 @@
         <p class="data-value">{{animStatisticData.telegram}}</p>
       </div>
       <div class="data-footer">
-        <p class="data-label">Переходов на Telegram</p>
+        <p class="data-label">Переходів в Telegram</p>
       </div>
     </div>
 
@@ -56,7 +56,7 @@
         <p class="data-value">{{animStatisticData.visit}}</p>
       </div>
       <div class="data-footer">
-        <p class="data-label">Просмотров страницы</p>
+        <p class="data-label">Переглядів сторінки</p>
       </div>
     </div>
 
@@ -65,50 +65,50 @@
         <p class="data-value">{{animStatisticData.listPosition}}</p>
       </div>
       <div class="data-footer">
-        <p class="data-label">Рейтинг среди пользователей</p>
+        <p class="data-label">Рейтинг серед користувачів</p>
       </div>
     </div>
   </div>
 </div>
 
 <div class="text-container">
-  <h1>Параметр вовлеченности: {{statisticData.interestingParam.toFixed(2)}}</h1>
+  <h1>Параметр залученості: {{statisticData.interestingParam.toFixed(2)}}</h1>
   <p *ngIf="statisticData.interestingParam < 1">
-    Параметр вовлеченности меньше 1-го.
-    Это значит, что люди посещают Вашу страницу, но не связываются с Вами.
-    Это может быть из-за высокой цены, плохой демонстрации работ или малоного набора услуг.
-    Подумайте, как можно улучшить Вашу страницу. Наблюдать за изменениями Вы сможете на этой же странице.
-    Свяжитесь с нашей командой HiPlace и мы Вам поможем)
+    Параметр залученості менше 1.
+    Це означає, що люди відвідують Вашу сторінку, але не зв'язуються з Вами.
+    Це може бути через високу ціну, погану демонстрацію робіт або малий набір послуг.
+    Подумайте, як можна покращити Вашу сторінку. Слідкувати за змінами Ви зможете на цій же сторінці.
+    Зв'яжіться з нашою командою HiPlace, і ми Вам допоможемо :)
   </p>
 
   <p *ngIf="statisticData.interestingParam >= 1 && statisticData.interestingParam < 2">
-    Параметр вовлеченности меньше 2-х.
-    Это значит, что каждое посещение принесло минимум 1 потенциального клиента, который захотел с Вами связаться.
-    Для увеличения потенциальных клиентов команда HiPlace советует выбрать только самые лучшие примеры работ и составить хорошее описание Вашего профиля.
+    Параметр залученості менше 2.
+    Це означає, що кожне відвідування принесло щонайменше 1 потенційного клієнта, який захотів з Вами зв'язатися.
+    Для збільшення кількості клієнтів команда HiPlace радить обрати найкращі приклади робіт і скласти гарний опис профілю.
   </p>
 
   <p *ngIf="statisticData.interestingParam >= 2 && statisticData.interestingParam < 4">
-    Параметр вовлеченности больше 2-х.
-    Это значит, что каждый потенциальный клиент посетил Ваши социальные сети или позвонил Вам. Это очень хороший результат.
-    Для того чтобы держаться на таком же уровне, команда HiPlace советует регулярно мониторить Вашу рейтинговую позицию и стоимость услуг на рынке.
+    Параметр залученості більше 2.
+    Це означає, що кожен потенційний клієнт відвідав Ваші соціальні мережі або зателефонував Вам. Це дуже гарний результат.
+    Щоб підтримувати такий рівень, команда HiPlace радить регулярно моніторити рейтинг і вартість послуг на ринку.
   </p>
 
   <p *ngIf="statisticData.interestingParam > 6">
-    Параметр вовлеченности больше 6.
-    Возможна накрутка! Свяжитесь с командой HiPlace для уточнения деталей.
+    Параметр залученості більше 6.
+    Можливе накручування! Зв'яжіться з командою HiPlace для уточнення деталей.
   </p>
 </div>
 
 <div class="avg-price-container">
-  <h1>Сравнице свои цены с средними ценами на сайте!</h1>
-  <p>* в таблице отображаются услуги, у которых разница с рынком больше 1%</p>
+  <h1>Порівняйте свої ціни із середніми цінами на сайті!</h1>
+  <p>* У таблиці відображаються послуги, де різниця з ринком більше 1%</p>
   <table class="avg-price-table">
     <thead>
     <tr>
-      <th>Услуга</th>
-      <th>Средняя цена</th>
-      <th>Ваша цена</th>
-      <th>Разница в цене</th>
+      <th>Послуга</th>
+      <th>Середня ціна</th>
+      <th>Ваша ціна</th>
+      <th>Різниця в ціні</th>
     </tr>
     </thead>
     <tbody>
@@ -118,17 +118,16 @@
       <td>{{item.price | number: '1.1-2'}}</td>
       <td>
         <p *ngIf="item.priceDifferentPercent > 0">
-          Ваша цена на {{item.priceDifferentPercent.toFixed(1)}}% ниже средней цены
+          Ваша ціна на {{item.priceDifferentPercent.toFixed(1)}}% нижча за середню ціну
         </p>
         <p *ngIf="item.priceDifferentPercent < 0">
-          Ваша цена на {{(-1 * item.priceDifferentPercent).toFixed(1)}}% выше средней цены
+          Ваша ціна на {{(-1 * item.priceDifferentPercent).toFixed(1)}}% вища за середню ціну
         </p>
         <p *ngIf="item.priceDifferentPercent === 0">
-          Ваша цена совпадает с средней
+          Ваша ціна збігається із середньою
         </p>
       </td>
     </tr>
     </tbody>
   </table>
-
 </div>

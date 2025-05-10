@@ -115,6 +115,7 @@ export class ProfileComponent implements OnInit {
     this.showService = false;
     this.showAddAddress = false;
     this.showAddDiscount = false;
+    this.showStatistic = false;
   }
 
   public showAddAddressOnClick() {

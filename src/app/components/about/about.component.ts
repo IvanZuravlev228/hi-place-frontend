@@ -17,10 +17,10 @@ export class AboutComponent {
   }
 
   goToRegisterPage() {
-    this.router.navigate(["/user/auth/register"])
+    this.router.navigate(["/user/auth/register"]);
   }
 
   goToDiscountPage() {
-
+    this.router.navigate(["/discounts"]);
   }
 }

@@ -12,7 +12,7 @@
           <p>
             {{ type.name }}
           </p>
-          <p id="added-images">(добавлено картинок:{{ type.imageCount ? type.imageCount : 0 }}/5)</p>
+          <p id="added-images">(додано картинок:{{ type.imageCount ? type.imageCount : 0 }}/5)</p>
           <div class="add-image" *ngIf="type.imageCount < 5">
             <input type="file" (change)="onFileSelected($event, type)">
           </div>
